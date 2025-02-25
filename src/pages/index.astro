@@ -1,0 +1,270 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+
+const team = [
+  {
+    name: 'Vigneshvar S',
+    role: 'Chief Executive Officer',
+    image: '/Vig.jpeg' 
+  },
+  {
+    name: 'Siva Sankar G',
+    role: 'Chief Operating Officer',
+    image: '/Siva.JPG' 
+  },
+  {
+    name: 'Muthu K',
+    role: 'Chief Technology Officer',
+    image: '/muthu.JPG'  
+  }
+];
+
+const services = [
+  {
+    title: 'Web Development',
+    description: 'Custom websites and web applications built with modern technologies'
+  },
+  {
+    title: 'Mobile Apps',
+    description: 'Native and cross-platform mobile applications for iOS and Android'
+  },
+  {
+    title: 'Enterprise Solutions',
+    description: 'Scalable software solutions tailored for business growth'
+  },
+  {
+    title: 'UI/UX Design',
+    description: 'User-centered design that delivers exceptional digital experiences'
+  },
+  {
+    title: 'AI-Based Solutions',
+    description: 'Intelligent automation and machine learning solutions for business optimization'
+  },
+  {
+    title: 'Cloud-Based Solutions',
+    description: 'Secure and scalable cloud infrastructure and deployment services'
+  }
+];
+
+const portfolio = [
+  {
+    title: 'E-commerce Platform',
+    description: 'A full-featured online shopping platform with inventory management and payment integration',
+    image: 'https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=800',
+    link: 'https://thestorecicada.com'
+  },
+  {
+    title: 'Car Rental Website',
+    description: 'Modern car rental platform with booking management and vehicle tracking system',
+    image: 'https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&q=80&w=800',
+    link: 'http://180.235.121.245/carrento/'
+  },
+  {
+    title: 'Dental Clinic Portal',
+    description: 'Specialized patient management system for dental practices with treatment planning and billing',
+    image: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&q=80&w=800',
+    link: 'https://sreekanthdental-clinic.vercel.app'
+  },
+  {
+    title: 'Smart Inventory Management',
+    description: 'Real-time inventory tracking system with analytics and automated reordering capabilities',
+    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    title: 'Hospital Management System',
+    description: 'Comprehensive hospital management solution with patient records, billing, and pharmacy management',
+    image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&q=80&w=800'
+  },
+  {
+    title: 'E-commerce Marketplace',
+    description: 'Multi-vendor marketplace platform with advanced features like real-time analytics and automated marketing',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&q=80&w=800',
+    link: 'https://godstate.in'
+  }
+];
+---
+
+<Layout title="Sparrow Tech - Software Solutions Company">
+  <Navbar />
+  
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center relative">
+    <div class="absolute inset-0 z-0">
+      <img 
+        src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2000" 
+        alt="Background" 
+        class="w-full h-full object-cover"
+      />
+      <div class="absolute inset-0 bg-black/60"></div>
+    </div>
+    <div class="max-w-7xl mx-auto text-center relative z-10 px-4 sm:px-6 lg:px-8">
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-6" data-aos="fade-up">
+        Transforming Ideas into <span class="text-gray-200">Digital Solutions</span>
+      </h1>
+      <p class="text-xl text-gray-200 mb-8 max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+        We create innovative software solutions that empower businesses to thrive in the digital age
+      </p>
+      <a href="#contact" class="inline-block bg-white hover:bg-gray-100 text-primary px-8 py-3 rounded-lg transition-colors" data-aos="fade-up" data-aos-delay="200">
+        Get Started
+      </a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="bg-white section-padding">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Leadership Team</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {team.map((member, index) => (
+          <div class="text-center" data-aos="fade-up" data-aos-delay={index * 100}>
+            <img src={member.image} alt={member.name} class="w-48 h-48 object-cover rounded-full mx-auto mb-4 shadow-lg" />
+            <h3 class="text-xl font-semibold">{member.name}</h3>
+            <p class="text-gray-600">{member.role}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="bg-gray-50 section-padding">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Our Services</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {services.map((service, index) => (
+          <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay={index * 100}>
+            <h3 class="text-xl font-semibold mb-4">{service.title}</h3>
+            <p class="text-gray-600">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="bg-white section-padding">
+    <div class="max-w-7xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Our Work</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {portfolio.map((project, index) => (
+          <div class="overflow-hidden rounded-lg shadow-md hover:shadow-xl transition-shadow" data-aos="fade-up" data-aos-delay={index * 100}>
+            {project.link ? (
+              <a href={project.link} target="_blank" rel="noopener noreferrer" class="block">
+                <img src={project.image} alt={project.title} class="w-full h-64 object-cover transform hover:scale-105 transition-transform" />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2 text-primary hover:text-secondary">{project.title}</h3>
+                  <p class="text-gray-600">{project.description}</p>
+                </div>
+              </a>
+            ) : (
+              <div>
+                <img src={project.image} alt={project.title} class="w-full h-64 object-cover" />
+                <div class="p-6">
+                  <h3 class="text-xl font-semibold mb-2">{project.title}</h3>
+                  <p class="text-gray-600">{project.description}</p>
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-gray-50 section-padding">
+    <div class="max-w-3xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16" data-aos="fade-up">Get in Touch</h2>
+      <div class="bg-white p-8 rounded-lg shadow-md" data-aos="fade-up">
+        <form id="contactForm" class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+            <input type="text" id="name" name="name" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary" />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+            <input type="email" id="email" name="email" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary" />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+            <textarea id="message" name="message" rows="4" required class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-primary focus:ring-primary"></textarea>
+          </div>
+          <div id="formStatus" class="hidden">
+            <p class="text-center font-medium"></p>
+          </div>
+          <button type="submit" class="w-full bg-primary hover:bg-secondary text-white px-8 py-3 rounded-lg transition-colors">
+            Send Message
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center">
+        <h3 class="text-xl font-semibold mb-4">Sparrow Tech</h3>
+        <p class="text-gray-300">3/31 Raja Street, Mandaveli, Chennai - 28</p>
+        <a href="mailto:sparrowtechsoftwaresolutions@gmail.com" class="text-gray-300 hover:text-white transition-colors">
+          sparrowtechsoftwaresolutions@gmail.com
+        </a>
+        <div class="mt-6 text-sm text-gray-400">
+          © {new Date().getFullYear()} Sparrow Tech. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </footer>
+</Layout>
+
+<script>
+  import emailjs from '@emailjs/browser';
+
+  // Initialize EmailJS with your public key
+  emailjs.init("wPANv4ZJltPWbWBi6");
+
+  document.getElementById('contactForm')?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const form = e.target as HTMLFormElement;
+    const formStatus = document.getElementById('formStatus');
+    const statusText = formStatus?.querySelector('p');
+    const submitButton = form.querySelector('button[type="submit"]') as HTMLButtonElement;
+    
+    if (formStatus && statusText && submitButton) {
+      try {
+        // Disable submit button and show loading state
+        submitButton.disabled = true;
+        formStatus.className = 'py-3';
+        statusText.textContent = 'Sending message...';
+        statusText.className = 'text-gray-600 text-center font-medium';
+        formStatus.style.display = 'block';
+        
+        // Send email using EmailJS
+        await emailjs.send(
+          "service_w49an11",
+          "template_t76nqvn",
+          {
+            from_name: form.name.value,
+            from_email: form.email.value,
+            message: form.message.value,
+            to_email: "sparrowtechsoftwaresolutions@gmail.com"
+          }
+        );
+        
+        // Show success message
+        statusText.textContent = 'Message sent successfully!';
+        statusText.className = 'text-green-600 text-center font-medium';
+        form.reset();
+      } catch (error) {
+        // Show error message
+        statusText.textContent = 'Failed to send message. Please try again.';
+        statusText.className = 'text-red-600 text-center font-medium';
+      } finally {
+        // Re-enable submit button
+        submitButton.disabled = false;
+      }
+    }
+  });
+</script>
